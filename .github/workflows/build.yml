@@ -7,9 +7,6 @@ name: run
 on:
   push:
     branches: [ master ]
-    paths:
-      - 'bin/**'
-      - '.github/workflows/build.yml'
 
 env:
   RUST_BACKTRACE: 1
