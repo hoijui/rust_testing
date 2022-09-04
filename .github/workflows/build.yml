@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2022 Robin Vobruba <hoijui.quaero@gmail.com>
+#
+# SPDX-License-Identifier: Unlicense
+
+name: run
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'bin/**'
+      - '.github/workflows/build.yml'
+
+env:
+  RUST_BACKTRACE: 1
+
+jobs:
+  run_test:
+    name: Run projvar test deriver
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Run"
+        run: bin/deriver
